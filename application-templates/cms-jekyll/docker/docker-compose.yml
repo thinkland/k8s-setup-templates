@@ -6,7 +6,7 @@ services:
         build:
             context: ..
             dockerfile: docker/Dockerfile
-        image: ghcr.io/thinkland/cms1:latest
+        image: ghcr.io/REPOSITORY/IMAGE:latest
         ports:
             - "8080:80"
         environment: 

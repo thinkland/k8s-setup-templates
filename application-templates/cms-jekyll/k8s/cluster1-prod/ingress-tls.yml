@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    # cert-manager.io/cluster-issuer: letsencrypt-staging   #  try 1st
+    # cert-manager.io/cluster-issuer: letsencrypt-prod      #  use if succeeded
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+  name: cms1-ing-tls
+  namespace: prod
+spec:
+  rules:
+  - host: cms1-cluster1.thinkland.de
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: cms1
+            port:
+              number: 8080
+  tls:
+  - hosts:
+    - cms1-cluster1.thinkland.de
+    secretName: cms1-ing-cert

@@ -7,5 +7,5 @@ resources:
 namespace: dev
 images:
 - name: cms1
-  newName: ghcr.io/thinkland/cms1
+  newName: ghcr.io/REPOSITORY/cms1
   newTag: latest

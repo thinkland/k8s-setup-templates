@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cms1-ing
+  labels:
+    name: cms1-ing
+spec:
+  rules:
+  - host: cms1-cluster1.thinkland.de   # TODO
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: cms1
+            port: 
+              number: 8080
