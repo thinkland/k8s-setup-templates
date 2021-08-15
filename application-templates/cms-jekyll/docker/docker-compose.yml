@@ -1,0 +1,13 @@
+# compose for nginx
+version: "3.9"
+
+services: 
+    cms1:
+        build:
+            context: ..
+            dockerfile: docker/Dockerfile
+        image: ghcr.io/thinkland/cms1:latest
+        ports:
+            - "8080:80"
+        environment: 
+            - NGINX_PORT=80

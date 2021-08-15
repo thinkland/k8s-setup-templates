@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../base
+resources:
+- ingress.yml
+namespace: dev
+images:
+- name: cms1
+  newName: ghcr.io/thinkland/cms1
+  newTag: latest

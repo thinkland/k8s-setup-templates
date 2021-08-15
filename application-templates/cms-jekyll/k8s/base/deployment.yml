@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cms1
+spec:
+  selector:
+    matchLabels:
+      app: cms1
+  template:
+    metadata:
+      labels:
+        app: cms1
+    spec:
+      containers:
+      - name: cms1
+        image: cms1
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: regcred
+
+
