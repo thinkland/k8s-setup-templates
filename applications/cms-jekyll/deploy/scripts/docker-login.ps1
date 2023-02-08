@@ -2,7 +2,7 @@
 
 param (
     $GH_USER,   # ${{ github.actor }}
-    $REG_NAME,  # ghrc.io
+    $REG_NAME,  # ghcr.io
     $REG_PASS   # ${{ secrets.GHCR_PAT_TOKEN }} | $(cat secrets/container-pat.token)
 )
 
